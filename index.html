@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <style>
+        p {
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+
+<center>
+
+    <body>
+
+
+        <h1>Totally Trivial Trivia </h1>
+        <p id="demo"></p>
+
+        <div id="container">
+            <div id="quiz">
+                <div id="questions-text"><h1></h1></div>
+            </div>
+            <br>
+            <div id="results"></div>
+
+            <button type="submit">Submit</button>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+        <script>
+            $("document").ready(function () {
+                // Set the date we're counting down to
+                var seconds = 31;
+
+                // Update the count down every 1 second
+                var x = setInterval(function () {
+                    // Get todays date and time
+                    if (seconds) {
+                        seconds--;
+                    }
+                    // Output the result in an element with id="demo"
+                    document.getElementById("demo").innerHTML = seconds + "s ";
+
+                    // If the count down is over, write some text 
+                    if (seconds === 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "EXPIRED";
+                    }
+                }, 1000);
+
+                var question;
+                var answers;
+                var results;
+                var correctAnswer;
+                var wrongAnswer;
+
+
+
+                function theQuestions() {
+                    for( var i = 0; i <= myQuestions.length; i++){
+                        myQuestions[i];
+                    }
+                    const myQuestions = [
+                        {
+                            question_1: "Who is the strongest?",
+                            answers: {
+                                a: "Superman",
+                                b: "The Terminator",
+                                c: "Waluigi, obviously"
+                            },
+                            correctAnswer: "c"
+                        },
+                        {
+                            question_2: "What is the best site ever created?",
+                            answers: {
+                                a: "SitePoint",
+                                b: "Simple Steps Code",
+                                c: "Trick question; they're both the best"
+                            },
+                            correctAnswer: "c"
+                        },
+                        {
+                            question_3: "Where is Waldo really?",
+                            answers: {
+                                a: "Antarctica",
+                                b: "Exploring the Pacific Ocean",
+                                c: "Sitting in a tree",
+                                d: "Minding his own business, so stop asking"
+                            },
+                            correctAnswer: "d"
+                        }
+                    ];
+                    
+                }
+
+                cosnole.log(theQuestions);
+               
+
+            });
+        </script>
+
+    </body>
+</center>
+
+</html>
